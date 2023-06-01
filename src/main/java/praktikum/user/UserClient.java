@@ -18,7 +18,7 @@ public class UserClient extends StellarBurgersRestClient {
 
     @Step("Создаем учетные данные")
     public User getRandomUserTestData() {
-        final String email = RandomStringUtils.randomAlphabetic(5).toLowerCase() + "@mail.com";
+        final String email = RandomStringUtils.randomAlphabetic(5).toLowerCase() + "@mail.ru";
         final String password = RandomStringUtils.randomAlphabetic(5);
         final String name = RandomStringUtils.randomAlphabetic(5);
 

@@ -31,7 +31,7 @@ public class CreatingOrderWithoutAuthorizationTest {
         String ingredientHash = orderClient.getIngredient(index);
 
         List<Ingredients> ingredientsList = new ArrayList<>();
-        ingredientsList.add(Ingredients.builder()._id(ingredientHash).build());
+        ingredientsList.add(Ingredients.builder().id(ingredientHash).build());
 
         Order order = Order.builder().ingredients(ingredientsList).build();
         orderClient.createOrderWithIngredientsWithoutAuthorization(order);
@@ -44,7 +44,7 @@ public class CreatingOrderWithoutAuthorizationTest {
         String invalidIngredientHash = "61c0c5a71d1f82001bdaaa6r";
 
         List<Ingredients> ingredientsList = new ArrayList<>();
-        ingredientsList.add(Ingredients.builder()._id(invalidIngredientHash).build());
+        ingredientsList.add(Ingredients.builder().id(invalidIngredientHash).build());
 
         Order order = Order.builder().ingredients(ingredientsList).build();
         orderClient.createOrderWithInvalidIngredientHashWithoutAuthorization(order);
@@ -61,8 +61,8 @@ public class CreatingOrderWithoutAuthorizationTest {
         String secondIngredientHash = orderClient.getIngredient(secondIndex);
 
         List<Ingredients> ingredientsList = new ArrayList<>();
-        ingredientsList.add(Ingredients.builder()._id(firstIngredientHash).build());
-        ingredientsList.add(Ingredients.builder()._id(secondIngredientHash).build());
+        ingredientsList.add(Ingredients.builder().id(firstIngredientHash).build());
+        ingredientsList.add(Ingredients.builder().id(secondIngredientHash).build());
 
         Order order = Order.builder().ingredients(ingredientsList).build();
         orderClient.createOrderWithIngredientsWithoutAuthorization(order);
@@ -77,8 +77,8 @@ public class CreatingOrderWithoutAuthorizationTest {
         String invalidIngredientHash = orderClient.getIngredient(index) + "q";
 
         List<Ingredients> ingredientsList = new ArrayList<>();
-        ingredientsList.add(Ingredients.builder()._id(invalidIngredientHash).build());
-        ingredientsList.add(Ingredients.builder()._id(validIngredientHash).build());
+        ingredientsList.add(Ingredients.builder().id(invalidIngredientHash).build());
+        ingredientsList.add(Ingredients.builder().id(validIngredientHash).build());
 
         Order order = Order.builder().ingredients(ingredientsList).build();
         orderClient.createOrderWithInvalidIngredientHashWithoutAuthorization(order);
